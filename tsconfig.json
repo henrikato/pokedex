@@ -12,6 +12,12 @@
     "noEmit": true,
     "strict": true,
     "target": "ESNext",
+    "baseUrl": ".",
+    "paths": {
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@screens/*": ["src/screens/*"]
+    }
   },
   "exclude": [
     "node_modules",

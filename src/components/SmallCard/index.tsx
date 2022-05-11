@@ -1,6 +1,6 @@
 import { Container, ImagemPokemon, NomePokemon, NumeroPokemon } from "./styles";
 
-import Squirtle from "../../assets/pokemons/Squirtle.svg";
+import Squirtle from "@assets/pokemons/Squirtle.svg";
 
 export default function SmallCard() {
 	return (

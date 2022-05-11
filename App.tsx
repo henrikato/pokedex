@@ -3,8 +3,8 @@ import { ThemeProvider } from "styled-components/native";
 import { useFonts } from "expo-font";
 import { Poppins_700Bold, Poppins_400Regular } from "@expo-google-fonts/poppins";
 
-import theme from "./src/assets/styles/theme";
-import Home from "./src/screens/Home";
+import theme from "@assets/styles/theme";
+import Home from "@screens/Home";
 
 export default function App() {
 	const [fontsLoaded] = useFonts({

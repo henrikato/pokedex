@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { BotaoOrdenacao, Container, ConteudoTitulo, Header, InputTexto, Lista, Titulo } from "./styles";
+import { BotaoOrdenacao, Container, ConteudoTitulo, Header, InputTexto, Titulo } from "./styles";
 
-import Icone from "../../assets/icons/pokeball.svg";
-import SortAsc from "../../assets/icons/sortasc.svg";
-import SortDesc from "../../assets/icons/sortdesc.svg";
-import SmallCard from "../../components/SmallCard";
+import Icone from "@assets/icons/pokeball.svg";
+import SortAsc from "@assets/icons/sortasc.svg";
+import SortDesc from "@assets/icons/sortdesc.svg";
+import SmallCard from "@components/SmallCard";
 
 export default function Home() {
 	const [decrescente, setDecrescente] = useState(false);
@@ -23,9 +23,7 @@ export default function Home() {
 				</BotaoOrdenacao>
 			</Header>
 			<InputTexto placeholder="Procurar" />
-			<Lista>
-				<SmallCard />
-			</Lista>
+			<SmallCard />
 		</Container>
 	)
 }
