@@ -1,14 +1,26 @@
+import { View } from "react-native";
 import { ThemeProvider } from "styled-components/native";
-import { Container, Text } from "./styles";
+import { useFonts } from "expo-font";
+import { Poppins_700Bold, Poppins_400Regular } from "@expo-google-fonts/poppins";
 
-import theme from "./src/styles/theme";
+import theme from "./src/assets/styles/theme";
+import Home from "./src/screens/Home";
 
 export default function App() {
+	const [fontsLoaded] = useFonts({
+		Poppins_700Bold,
+		Poppins_400Regular
+	});
+
+	if (!fontsLoaded) {
+		return (
+			<View />
+		)
+	};
+
 	return (
 		<ThemeProvider theme={theme}>
-			<Container>
-				<Text>Hello, world.</Text>
-			</Container>
+			<Home />
 		</ThemeProvider>
 	);
 }
