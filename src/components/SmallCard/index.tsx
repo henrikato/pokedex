@@ -1,19 +1,24 @@
-import { Container, ImagemPokemon, NomePokemon, NumeroPokemon } from "./styles";
+import { Container, Nome, Codigo } from "./styles";
+import PokemonDTO from "@dto/pokemonDTO";
+import RetornaSvg from "@utils/RetornaSvg";
 
-import Squirtle from "@assets/pokemons/Squirtle.svg";
+type Props = {
+	pokemon: PokemonDTO
+}
+export default function SmallCard({ pokemon: { code, name, types } }: Props) {
+	const type = types[0].name;
 
-export default function SmallCard() {
+	const icone = RetornaSvg(name);
+
 	return (
-		<Container>
-			<NumeroPokemon>
-				#001
-			</NumeroPokemon>
-			<ImagemPokemon>
-				<Squirtle width={72} height={72} />
-			</ImagemPokemon>
-			<NomePokemon>
-				Squirtle
-			</NomePokemon>
+		<Container type={type}>
+			<Codigo type={type}>
+				{code}
+			</Codigo>
+			{icone}
+			<Nome type={type}>
+				{name}
+			</Nome>
 		</Container>
 	);
 }

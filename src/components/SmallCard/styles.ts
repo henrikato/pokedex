@@ -1,37 +1,37 @@
+import { PixelRatio } from "react-native";
 import styled from "styled-components/native";
 
-export const Container = styled.View`
-	width: 104px;
-	height: 112px;
+const scale = PixelRatio.getFontScale();
+
+type Props = {
+	type: string
+}
+export const Container = styled.TouchableOpacity<Props>`
 	margin: 8px;
 	flex-direction: column;
 	align-items: center;
 	border: 1px solid;
 	border-radius: 8px;
-	border-color: ${({theme}) => theme.water};
+	border-color: ${({theme, type}) => theme[type]};
 `;
 
-export const NumeroPokemon = styled.Text`
-	margin: 0 8px;
-	margin-top: 4px;
+export const Codigo = styled.Text<Props>`
+	padding: 0 8px;
+	padding-top: 4px;
 	align-self: flex-end;
 	font-family: ${({theme}) => theme.fonts.REGULAR};
-	font-size: 8px;
-	color: ${({theme}) => theme.water};
+	font-size: ${14 * scale}px;
+	color: ${({theme, type}) => theme[type]};
 `;
 
-export const ImagemPokemon = styled.View`
-
-`;
-
-export const NomePokemon = styled.Text`
+export const Nome = styled.Text<Props>`
 	align-self: stretch;
 	text-align: center;
 	padding: 4px;
 	border-bottom-left-radius: 8px;
 	border-bottom-right-radius: 8px;
-	background-color: ${({theme}) => theme.water};
+	background-color: ${({theme, type}) => theme[type]};
 	font-family: ${({theme}) => theme.fonts.REGULAR};
-	font-size: 10px;
+	font-size: ${18 * scale}px;
 	color: ${({theme}) => theme.white};
 `;

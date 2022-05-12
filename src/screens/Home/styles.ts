@@ -3,13 +3,13 @@ import styled from "styled-components/native";
 export const Container = styled.View`
 	flex: 1;
 	gap: 16px;
-	padding: 8px;
+	padding: 16px;
 	background-color: ${({theme}) => theme.background};
 `;
 
 export const Header = styled.View`
 	width: 100%;
-	padding: 0 16px;
+	padding: 0 8px;
 	margin-top: 44px;
 	flex-direction: row;
 	align-items: flex-start;
@@ -23,7 +23,7 @@ export const ConteudoTitulo = styled.View`
 `;
 
 export const Titulo = styled.Text`
-	margin-left: 16px;
+	padding-left: 16px;
 	font-family: ${({theme}) => theme.fonts.BOLD};
 	font-size: 24px;
 	color: ${({theme}) => theme.dark_gray};
@@ -37,7 +37,7 @@ export const BotaoOrdenacao = styled.TouchableOpacity`
 `;
 
 export const InputTexto = styled.TextInput`
-	margin: 0 8px;
+	margin-bottom: 16px;
 	padding: 4px 10px;
 	background-color: ${({theme}) => theme.white};
 	border: 1px solid ${({theme}) => theme.ligth_gray};
