@@ -1,12 +1,14 @@
+import { PokemonName } from "@dto/pokemonDTO";
 import { PixelRatio } from "react-native";
 import styled from "styled-components/native";
 
 const scale = PixelRatio.getFontScale();
 
 type Props = {
-	type: string
+	type: PokemonName
 }
 export const Container = styled.TouchableOpacity<Props>`
+	flex: 1;
 	margin: 8px;
 	flex-direction: column;
 	align-items: center;
@@ -32,6 +34,6 @@ export const Nome = styled.Text<Props>`
 	border-bottom-right-radius: 8px;
 	background-color: ${({theme, type}) => theme[type]};
 	font-family: ${({theme}) => theme.fonts.REGULAR};
-	font-size: ${18 * scale}px;
+	font-size: ${16 * scale}px;
 	color: ${({theme}) => theme.white};
 `;
