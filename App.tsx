@@ -4,7 +4,7 @@ import { useFonts } from "expo-font";
 import { Poppins_700Bold, Poppins_400Regular } from "@expo-google-fonts/poppins";
 
 import theme from "@assets/styles/theme";
-import Home from "@screens/Home";
+import Routes from "@routes/index";
 
 export default function App() {
 	const [fontsLoaded] = useFonts({
@@ -20,7 +20,7 @@ export default function App() {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<Home />
+			<Routes />
 		</ThemeProvider>
 	);
 }
