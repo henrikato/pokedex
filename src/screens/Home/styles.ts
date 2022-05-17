@@ -40,6 +40,6 @@ export const InputTexto = styled.TextInput`
 	margin-bottom: 16px;
 	padding: 4px 10px;
 	background-color: ${({theme}) => theme.white};
-	border: 1px solid ${({theme}) => theme.ligth_gray};
+	border: 1px solid ${({theme}) => theme.light_gray};
 	border-radius: 8px;
 `;

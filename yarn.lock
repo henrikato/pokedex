@@ -4748,6 +4748,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"expo-linear-gradient@npm:~11.3.0":
+  version: 11.3.0
+  resolution: "expo-linear-gradient@npm:11.3.0"
+  peerDependencies:
+    expo: "*"
+  checksum: e524e92b87eef63b9c51def788962d8b50a6c215be9a27acb028b6996473e13d4c390ae87b0b88d0377d4a302075eba0c9fdd5b4139de9c58c918b325040433b
+  languageName: node
+  linkType: hard
+
 "expo-modules-autolinking@npm:0.8.0":
   version: 0.8.0
   resolution: "expo-modules-autolinking@npm:0.8.0"
@@ -7973,6 +7982,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7.12.9
     "@expo-google-fonts/poppins": ^0.2.2
+    "@expo/vector-icons": ^13.0.0
     "@react-navigation/bottom-tabs": ^6.3.1
     "@react-navigation/native": ^6.0.10
     "@react-navigation/native-stack": ^6.6.2
@@ -7985,6 +7995,7 @@ __metadata:
     babel-plugin-module-resolver: ^4.1.0
     expo: ~45.0.0
     expo-font: ~10.1.0
+    expo-linear-gradient: ~11.3.0
     expo-splash-screen: ~0.15.1
     expo-status-bar: ~1.3.0
     react: 17.0.2

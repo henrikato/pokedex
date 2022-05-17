@@ -19,7 +19,7 @@ export default {
 	dragon: "#7037FF",
 	dark_gray: "#212121",
 	medium_gray: "#666666",
-	ligth_gray: "#E0E0E0",
+	light_gray: "#E0E0E0",
 	white: "#FFFFFF",
 	background: "#F7F7F7",
 	primary: "#2D70B7",

@@ -1,14 +1,21 @@
 import { useEffect, useState } from "react";
 import PokemonDTO from "@dto/pokemonDTO";
-import { BotaoHeader, Codigo, Container, Conteudo, ConteudoSvg, ConteudoTitulo, Header, Nome } from "./styles";
-import { RouteProp, useRoute } from "@react-navigation/native";
-import { View } from "react-native";
-import { AppRouteList } from "@routes/styles";
+import { BotaoHeader, Codigo, Container, Conteudo, ConteudoSvg, ConteudoTitulo, Descricao, Header, LabelDestaque, Nome, Tipos } from "./styles";
+import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
+import { FlatList, View } from "react-native";
+import { AppRouteList } from "@routes/params";
 import retornaSvg from "@utils/RetornaSvg";
+import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
+import { useTheme } from "styled-components";
+import TypeCard from "@components/TypeCard";
+import AboutData from "@components/AboutData";
+import BaseStats from "@components/BaseStats";
 
-type DetalhesRouteProps = RouteProp<AppRouteList, "Detalhes">
+type DetalhesRouteProps = RouteProp<AppRouteList, "Detalhes">;
 
 export default function Detalhes() {
+	const { canGoBack, goBack } = useNavigation();
+	const theme = useTheme();
 	const route = useRoute<DetalhesRouteProps>();
 	const [pokemon, setPokemon] = useState<PokemonDTO>();
 
@@ -17,22 +24,51 @@ export default function Detalhes() {
 		setPokemon(pokemon);
 	}, []);
 
-	if(!pokemon) return <View />;
+	if (!pokemon) return <View />;
+
+	const voltar = () => {
+		if (canGoBack()) {
+			goBack();
+		}
+	}
 
 	return (
 		<Container type={pokemon.types[0].name}>
 			<Header>
 				<ConteudoTitulo>
-					<BotaoHeader />
+					<BotaoHeader onPress={voltar}>
+						<Feather name="arrow-left" size={22} color={theme.white} />
+					</BotaoHeader>
 					<Nome>{pokemon.name}</Nome>
 					<Codigo>{pokemon.code}</Codigo>
 				</ConteudoTitulo>
-				<BotaoHeader />
+				<BotaoHeader>
+					<MaterialCommunityIcons name="heart" size={22} color={theme.white} />
+				</BotaoHeader>
 			</Header>
 			<Conteudo>
 				<ConteudoSvg>
 					{retornaSvg(pokemon.name, 200, 200)}
 				</ConteudoSvg>
+				<Tipos>
+					<FlatList
+						horizontal
+						data={pokemon.types}
+						keyExtractor={({ id }) => String(id)}
+						renderItem={({ item }) => <TypeCard tipoPokemon={item} />}
+						ItemSeparatorComponent={() => <View style={{ width: 20, height: 20 }} />} />
+				</Tipos>
+
+				<LabelDestaque type={pokemon.types[0].name}>
+					About
+				</LabelDestaque>
+				<AboutData pokemon={pokemon} />
+				<Descricao>{pokemon.about.description}</Descricao>
+
+				<LabelDestaque type={pokemon.types[0].name}>
+					Base Stats
+				</LabelDestaque>
+				<BaseStats stats={pokemon.base_stats} type={pokemon.types[0].name} />
 			</Conteudo>
 		</Container>
 	);

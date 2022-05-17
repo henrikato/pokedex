@@ -8,32 +8,32 @@ interface PokemonDTO {
 	types: Array<PokemonType>
 }
 
-interface PokemonAbout {
+export interface PokemonAbout {
 	weight: string,
 	height: string,
 	description: string
 }
 
-interface PokemonMove {
+export interface PokemonMove {
 	id: number,
 	name: string
 }
 
-interface PokemonBaseStats {	
-	hp: string,
-	atk: string,
-	def: string,
-	satk: string,
-	sdef: string,
-	spd: string
+export interface PokemonBaseStats {	
+	hp: number,
+	atk: number,
+	def: number,
+	satk: number,
+	sdef: number,
+	spd: number
 }
 
-interface PokemonType {
+export interface PokemonType {
 	id: number,
-	name: PokemonName
+	name: PokemonTypeName
 }
 
-export const enum PokemonName {
+export const enum PokemonTypeName {
 	rock = "rock",
 	ghost = "ghost",
 	steel = "steel",

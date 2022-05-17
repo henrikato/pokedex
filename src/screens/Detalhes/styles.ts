@@ -1,16 +1,20 @@
-import { PokemonName } from "@dto/pokemonDTO";
-import { PixelRatio } from "react-native";
+import { PokemonTypeName } from "@dto/pokemonDTO";
+import { Dimensions } from "react-native";
 import styled from "styled-components/native";
 
-const scale = PixelRatio.get();
+const { height } = Dimensions.get("screen");
 
 type Props = {
-	type: PokemonName
+	type: PokemonTypeName
 }
 
-export const Container = styled.View<Props>`
+export const Container = styled.ScrollView.attrs({
+	contentContainerStyle: {
+		minHeight: height,
+		padding: 4
+	}
+})<Props>`
 	flex: 1;
-	padding: 4px;
 	background-color: ${({theme, type}) => theme[type]};
 `;
 
@@ -61,4 +65,24 @@ export const Conteudo = styled.View`
 export const ConteudoSvg = styled.View`
 	position: absolute;
 	margin-top: -130px;
+`;
+
+export const Tipos = styled.View`
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 16px;
+	margin-top: 70px;
+`;
+
+export const LabelDestaque = styled.Text<Props>`
+	font-family: ${({theme}) => theme.fonts.BOLD};
+	color: ${({theme, type}) => theme[type]};
+	font-size: 20px;
+`;
+
+export const Descricao = styled.Text`
+	margin: 16px 0px;
+	font-family: ${({theme}) => theme.fonts.REGULAR};
+	font-size: 16px;
 `;

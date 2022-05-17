@@ -5,6 +5,7 @@ import { Poppins_700Bold, Poppins_400Regular } from "@expo-google-fonts/poppins"
 
 import theme from "@assets/styles/theme";
 import Routes from "@routes/index";
+import AuthProvider from "@hooks/auth";
 
 export default function App() {
 	const [fontsLoaded] = useFonts({
@@ -20,7 +21,9 @@ export default function App() {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<Routes />
+			<AuthProvider>
+				<Routes />
+			</AuthProvider>
 		</ThemeProvider>
 	);
 }
