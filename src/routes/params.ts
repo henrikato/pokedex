@@ -1,5 +1,5 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import PokemonDTO from "@dto/pokemonDTO";
+import PokemonDTO from "@dto/PokemonDTO";
 
 export type AppRouteList = {
 	Home: undefined,

@@ -1,4 +1,4 @@
-import PokemonDTO from "@dto/pokemonDTO";
+import PokemonDTO from "@dto/PokemonDTO";
 import { Acoes, Container, Dados, Medidas, Nome, Valor } from "./styles";
 
 import Altura from "@assets/icons/height.svg";

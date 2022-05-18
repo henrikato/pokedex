@@ -1,4 +1,4 @@
-import { PokemonType } from "@dto/pokemonDTO";
+import { PokemonType } from "@dto/PokemonDTO";
 import { Container, Tipo } from "./styles";
 
 type TypeCardProps = {

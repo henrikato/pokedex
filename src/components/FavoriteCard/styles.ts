@@ -55,6 +55,5 @@ export const Opcao = styled.View`
 `;
 
 export const Botao = styled.TouchableOpacity`
-	width: 40px;
-	height: 40px;
+	padding: 16px;
 `;

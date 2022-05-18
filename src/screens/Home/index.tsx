@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "@services/api";
-import PokemonDTO from "@dto/pokemonDTO";
+import PokemonDTO from "@dto/PokemonDTO";
 
 import { BotaoOrdenacao, Container, ConteudoTitulo, Header, InputTexto, Titulo } from "./styles";
 import SmallCard from "@components/SmallCard";
@@ -8,7 +8,7 @@ import SmallCard from "@components/SmallCard";
 import Icone from "@assets/icons/pokeball.svg";
 import SortAsc from "@assets/icons/sortasc.svg";
 import SortDesc from "@assets/icons/sortdesc.svg";
-import { FlatList, TouchableWithoutFeedback } from "react-native";
+import { FlatList, Keyboard, TouchableWithoutFeedback } from "react-native";
 
 export default function Home() {
 	const [decrescente, setDecrescente] = useState(false);
@@ -41,7 +41,7 @@ export default function Home() {
 	}, [decrescente, nomeFiltro]);
 
 	return (
-		<TouchableWithoutFeedback>
+		<TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
 			<Container>
 				<Header>
 					<ConteudoTitulo>

@@ -1,4 +1,4 @@
-import { PokemonTypeName } from "@dto/pokemonDTO";
+import { PokemonTypeName } from "@dto/PokemonDTO";
 import styled from "styled-components/native";
 
 type Props = {

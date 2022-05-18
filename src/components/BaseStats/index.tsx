@@ -1,4 +1,4 @@
-import { PokemonBaseStats, PokemonTypeName } from "@dto/pokemonDTO";
+import { PokemonBaseStats, PokemonTypeName } from "@dto/PokemonDTO";
 import { Atributo, Atributos, Container, MedidorBackground, Medidores, MedidorValor, Valor, Valores } from "./styles";
 
 type BaseStatsProps = {

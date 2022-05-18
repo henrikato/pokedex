@@ -1,13 +1,14 @@
 import TypeCard from "@components/TypeCard";
-import PokemonDTO from "@dto/pokemonDTO";
+import PokemonDTO from "@dto/PokemonDTO";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import retornaSvg from "@utils/RetornaSvg";
 import { Botao, Container, ConteudoSvg, ConteudoTexto, Descricao, LabelBold, Opcao, Tipos } from "./styles";
 
 type FavoriteCardProps = {
 	pokemon: PokemonDTO
+	onDelete: () => void
 }
-export default function FavoriteCard({pokemon}: FavoriteCardProps) {
+export default function FavoriteCard({pokemon, onDelete}: FavoriteCardProps) {
 	const { types, name, code } = pokemon;
 	return (
 		<Container>
@@ -24,7 +25,7 @@ export default function FavoriteCard({pokemon}: FavoriteCardProps) {
 				</Tipos>
 			</ConteudoTexto>
 			<Opcao>
-				<Botao>
+				<Botao onPress={onDelete}>
 					<MaterialCommunityIcons name="heart-broken" size={20} />
 				</Botao>
 			</Opcao>

@@ -25,10 +25,10 @@ export default function Profile() {
 			</Header>
 			
 			<AvatarWrapper>
-				<Avatar source={{ uri: "https://pbs.twimg.com/profile_images/1329549762316611588/q7K0ULFI_400x400.jpg" }} />
+				<Avatar source={{ uri: usuario?.imagem || "https://pbs.twimg.com/profile_images/1329549762316611588/q7K0ULFI_400x400.jpg" }} />
 			</AvatarWrapper>
 
-			<Nome>{usuario}</Nome>
+			<Nome>{usuario?.usuarioNome}</Nome>
 
 			<BotaoSair onPress={logout}>
 				<MaterialCommunityIcons name="logout" size={22} color={theme.white} />

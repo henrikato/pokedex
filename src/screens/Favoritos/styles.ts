@@ -10,7 +10,8 @@ export const Header = styled.View`
 	align-items: center;
 	justify-content: flex-start;
 	width: 100%;
-	margin-top: 44px;
+	margin: 40px 24px;
+	margin-bottom: 24px;
 `;
 
 export const Titulo = styled.Text`

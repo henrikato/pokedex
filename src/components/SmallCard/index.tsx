@@ -1,5 +1,5 @@
 import { Container, Nome, Codigo } from "./styles";
-import PokemonDTO from "@dto/pokemonDTO";
+import PokemonDTO from "@dto/PokemonDTO";
 import RetornaSvg from "@utils/RetornaSvg";
 import { TouchableOpacityProps } from "react-native";
 import { useNavigation } from "@react-navigation/native";

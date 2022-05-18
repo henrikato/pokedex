@@ -1,13 +1,14 @@
+import UsuarioDTO from "@dto/UsuarioDTO"
 import { createContext } from "react"
 
 type IAuthContext = {
-	usuario: string
+	usuario?: UsuarioDTO
 	autenticarComIAS(): void
 	logout(): void
 }
 
 const AuthContext = createContext<IAuthContext>({
-	usuario: "",
+	usuario: undefined,
 	autenticarComIAS: () => {},
 	logout: () => {}
 });
