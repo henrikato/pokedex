@@ -26,8 +26,8 @@ export default function Favoritos() {
 			"Remover favorito",
 			"Deseja remover este pokémon dos favoritos?",
 			[
-				{ text: "SIM", onPress: () => removeFromStorage(id) },
-				{ text: "NÃO", style: "cancel" }
+				{ text: "NÃO", style: "cancel" },
+				{ text: "SIM", onPress: () => removeFromStorage(id) }
 			])
 	}
 
